@@ -27,7 +27,7 @@ body{
   line-height:1.7;
   word-break:keep-all;
 }
-.wrap{max-width:560px;margin:0 auto;padding:0 20px 64px}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px 40px}
 
 /* 헤더 */
 .top{background:var(--yellow);padding:28px 0 0;margin-bottom:28px}
@@ -129,11 +129,26 @@ dd .sub{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-t
 .tl .date{display:block;font-size:14px;font-weight:600;margin-top:2px}
 .tl .tdesc{display:block;font-size:13px;color:var(--muted);margin-top:1px}
 
-footer{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
-footer a{color:var(--ink);font-weight:600;text-decoration:none}
-footer .forg{line-height:1.9;margin-bottom:10px}
-footer .flogo{display:block;margin-top:18px}
-footer .flogo img{display:block;width:190px;max-width:58%;height:auto}
+/* 푸터 */
+.site-footer{background:var(--ink);color:#B9B6AE;margin-top:44px;padding:34px 0 30px}
+.site-footer .wrap{padding-bottom:0}
+.frow{display:flex;justify-content:space-between;align-items:flex-start;gap:22px;flex-wrap:wrap}
+.ftitle{color:var(--yellow);font-size:17px;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.forg{display:grid;grid-template-columns:38px 1fr;row-gap:7px;column-gap:14px;font-size:14px}
+.forg dt{color:#8C8981;font-weight:500}
+.forg dd{color:#DAD7CF;font-weight:400}
+.flogo{display:block;flex:0 0 auto}
+.flogo img{display:block;width:176px;height:auto}
+.fbot{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+  margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.10);font-size:13px;
+}
+.fbot a{color:#DAD7CF;font-weight:600;text-decoration:none}
+.fen{color:#fff;opacity:.35;letter-spacing:.02em}
+@media (max-width:430px){
+  .flogo img{width:150px}
+  .fbot{margin-top:20px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -214,12 +229,27 @@ footer .flogo img{display:block;width:190px;max-width:58%;height:auto}
     </ul>
   </section>
 
-  <footer>
-    <p class="forg">주최 | 서울특별시<br>주관 | 서울AI재단</p>
-    <p>☎ 문의 <a href="tel:1544-9782">1544-9782</a> (평일 09:00~18:00)</p>
-    <a class="flogo" href="https://www.xn--2z1bw8k1pjz5ccumkb.kr/main.do" target="_blank" rel="noopener"><img src="logo.png" alt="서울AI디지털배움터"></a>
-  </footer>
 </div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="frow">
+      <div>
+        <p class="ftitle">2026 AI 인사이트 포럼</p>
+        <dl class="forg">
+          <dt>주최</dt><dd>서울특별시 디지털정책과</dd>
+          <dt>주관</dt><dd>서울AI재단</dd>
+          <dt>운영</dt><dd>(주)에이럭스</dd>
+        </dl>
+      </div>
+      <a class="flogo" href="https://www.xn--2z1bw8k1pjz5ccumkb.kr/main.do" target="_blank" rel="noopener"><img src="logo-white.png" alt="서울AI디지털배움터"></a>
+    </div>
+    <div class="fbot">
+      <p>☎ 문의 <a href="tel:1544-9782">1544-9782</a> (평일 09:00~18:00)</p>
+      <span class="fen">2026 AI Insight Forum</span>
+    </div>
+  </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
 <script>
