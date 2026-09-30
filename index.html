@@ -279,6 +279,16 @@ section{padding:clamp(48px,7vw,88px) 0}
   left:59%;right:clamp(14px,2vw,24px);
   top:50%;transform:translateY(-50%);
 }
+.spk-session{
+  display:inline-block;
+  margin-bottom:clamp(8px,1.2vw,12px);
+  padding:5px 12px;
+  border-radius:999px;
+  font-size:clamp(10px,1.1vw,11.5px);font-weight:800;letter-spacing:.12em;
+  background:var(--grad);
+  color:#fff;
+  box-shadow:0 4px 14px rgba(123,92,255,.35);
+}
 .spk-name{
   font-size:clamp(24px,2.8vw,34px);
   font-weight:900;
@@ -818,6 +828,7 @@ footer .f-tagline{
     padding:64px clamp(18px,5vw,24px) clamp(20px,5vw,26px);
     background:linear-gradient(to bottom,rgba(11,16,48,0) 0,#0B1030 56px);
   }
+  .spk-session{margin-bottom:10px}
   .spk-name{letter-spacing:.05em;font-size:clamp(24px,7vw,30px)}
   .spk-role{font-size:clamp(12.5px,3.6vw,14px)}
   .spk-topic{font-size:clamp(16px,4.6vw,19px)}
@@ -974,6 +985,7 @@ footer .f-tagline{
         <div class="spk-card spk-1">
           <div class="spk-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="18" x2="18" y2="6"/><polyline points="9 6 18 6 18 15"/></svg></div>
           <div class="spk-info">
+            <span class="spk-session">SESSION 01</span>
             <p class="spk-name">엄윤설</p>
             <p class="spk-role">(주)에이로봇 대표</p>
             <div class="spk-divider"></div>
@@ -985,6 +997,7 @@ footer .f-tagline{
         <div class="spk-card spk-2">
           <div class="spk-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="18" x2="18" y2="6"/><polyline points="9 6 18 6 18 15"/></svg></div>
           <div class="spk-info">
+            <span class="spk-session">SESSION 02</span>
             <p class="spk-name">허성범</p>
             <p class="spk-role">크리에이터 방송인<br>카이스트 AI 대학원 석사</p>
             <div class="spk-divider"></div>
@@ -1045,12 +1058,6 @@ footer .f-tagline{
           <div class="tl-body">
             <p class="tl-title">경품 추첨</p>
             <p class="tl-sub">나만 알기 아까운 AI 활용법 이벤트 당첨자 발표</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-time"><strong>15:55</strong><span>5분</span></div>
-          <div class="tl-body">
-            <p class="tl-title">만족도 조사 및 폐회</p>
           </div>
         </div>
       </div>
