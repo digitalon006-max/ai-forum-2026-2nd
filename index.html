@@ -4,8 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026 AI 인사이트 포럼</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="2026 AI 인사이트 포럼">
 <meta property="og:title" content="2026 AI 인사이트 포럼">
-<meta property="og:description" content="한 걸음 더, AI와 함께 여는 새로운 내일. 2026년 11월 3일(화) 서울시청 8층 다목적홀">
+<meta property="og:description" content="한 걸음 더, AI와 함께 여는 새로운 내일. 2026년 11월 3일(화) 14:00 서울시청 8층 다목적홀 · 연사 엄윤설, 허성범">
+<meta property="og:url" content="https://digitalon006-max.github.io/ai-forum-2026-2nd/">
+<meta property="og:image" content="https://digitalon006-max.github.io/ai-forum-2026-2nd/og.jpg">
+<meta property="og:image:secure_url" content="https://digitalon006-max.github.io/ai-forum-2026-2nd/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="2026 AI 인사이트 포럼, 연사 엄윤설 허성범">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026 AI 인사이트 포럼">
+<meta name="twitter:description" content="한 걸음 더, AI와 함께 여는 새로운 내일. 2026년 11월 3일(화) 14:00 서울시청 8층 다목적홀">
+<meta name="twitter:image" content="https://digitalon006-max.github.io/ai-forum-2026-2nd/og.jpg">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{
@@ -788,14 +802,25 @@ footer .f-tagline{
   .key-item{justify-content:flex-start}
   .key-item:nth-child(3){border-left:none}
   .speaker-grid{grid-template-columns:1fr}
-  /* 연사 카드: 세로형으로 전환, 인물은 위 / 텍스트는 아래 */
-  .spk-card{aspect-ratio:4/5;background-position:top center}
-  .spk-info{
-    left:0;right:0;top:auto;bottom:0;transform:none;
-    padding:clamp(18px,5vw,26px) clamp(16px,4.5vw,22px) clamp(18px,4.5vw,24px);
-    background:linear-gradient(to top,rgba(9,12,38,.95) 42%,rgba(9,12,38,.72) 72%,rgba(9,12,38,0));
+  /* 연사 카드: 인물 영역(위)과 텍스트 영역(아래)을 분리해 겹침 방지
+     원본 1240x800 중 인물이 있는 왼쪽 54%만 확대해 보여줌 */
+  .spk-card{
+    aspect-ratio:auto;
+    background-size:185% auto;
+    background-position:left top;
+    background-repeat:no-repeat;
+    background-color:#0B1030;
+    padding-top:100%;
   }
-  .spk-name{letter-spacing:.05em}
+  .spk-info{
+    position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none;
+    margin-top:-56px;
+    padding:64px clamp(18px,5vw,24px) clamp(20px,5vw,26px);
+    background:linear-gradient(to bottom,rgba(11,16,48,0) 0,#0B1030 56px);
+  }
+  .spk-name{letter-spacing:.05em;font-size:clamp(24px,7vw,30px)}
+  .spk-role{font-size:clamp(12.5px,3.6vw,14px)}
+  .spk-topic{font-size:clamp(16px,4.6vw,19px)}
   .mc-line{width:100%;justify-content:center}
   .loc-top{grid-template-columns:1fr}
   .transit-grid{grid-template-columns:1fr}
@@ -820,7 +845,7 @@ footer .f-tagline{
   .key-items{grid-template-columns:1fr}
   .key-item{border-left:none;border-top:1px solid var(--line);padding-top:14px}
   .key-item:first-child{border-top:none;padding-top:4px}
-  .spk-card{aspect-ratio:3/4}
+  .spk-card{background-size:200% auto;padding-top:104%}
   .stat-grid{grid-template-columns:1fr}
   .mc-line{flex-direction:column;gap:6px;border-radius:16px;padding:14px 18px;text-align:center}
   .mc-label{border-right:none;border-bottom:1px solid var(--line);padding:0 0 6px}
