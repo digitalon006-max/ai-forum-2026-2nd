@@ -235,6 +235,24 @@ section{padding:clamp(48px,7vw,88px) 0}
   margin-bottom:clamp(24px,3.5vw,40px);
 }
 
+/* 하이라이트 (숏폼) */
+.shorts-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2.4vw,28px);
+  max-width:900px;margin:0 auto;
+}
+.short-card{margin:0}
+.short-frame{
+  position:relative;aspect-ratio:9/16;
+  border-radius:clamp(14px,1.8vw,20px);overflow:hidden;
+  background:#0B1030;
+  box-shadow:var(--shadow-card);
+}
+.short-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.short-card figcaption{margin-top:12px;text-align:center}
+.short-card figcaption b{display:block;font-size:clamp(14px,1.7vw,16px);font-weight:800}
+.short-card figcaption span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+
 /* 연사 */
 .mc-line{
   margin-top:clamp(16px,2.2vw,22px);
@@ -811,6 +829,7 @@ footer .f-tagline{
   .key-items{grid-template-columns:repeat(2,1fr);row-gap:16px}
   .key-item{justify-content:flex-start}
   .key-item:nth-child(3){border-left:none}
+  .shorts-grid{grid-template-columns:1fr;max-width:380px}
   .speaker-grid{grid-template-columns:1fr}
   /* 연사 카드: 인물 영역(위)과 텍스트 영역(아래)을 분리해 겹침 방지
      원본 1240x800 중 인물이 있는 왼쪽 54%만 확대해 보여줌 */
@@ -905,6 +924,7 @@ footer .f-tagline{
     <nav>
       <a href="#about">행사소개</a>
       <a href="#speakers">연사소개</a>
+      <a href="#highlights">하이라이트</a>
       <a href="#schedule">시간표</a>
       <a href="#join">참여안내</a>
       <a href="#prizes">경품</a>
@@ -925,6 +945,7 @@ footer .f-tagline{
     <a href="https://www.xn--2z1bw8k1pjz5ccumkb.kr/entry.do" target="_blank" rel="noopener">서울AI디지털배움터</a>
     <a href="#about">행사소개</a>
     <a href="#speakers">연사소개</a>
+    <a href="#highlights">하이라이트</a>
     <a href="#schedule">시간표</a>
     <a href="#join">참여안내</a>
     <a href="#prizes">경품</a>
@@ -1035,6 +1056,35 @@ footer .f-tagline{
         </div>
       </div>
       <p class="mc-line"><span class="mc-label">사회</span> <strong>노지선</strong> 아나운서</p>
+    </div>
+  </section>
+
+  <section id="highlights">
+    <div class="container">
+      <span class="section-label">지난 포럼 하이라이트</span>
+      <h2 class="section-title">1차 포럼, 이렇게 진행됐습니다</h2>
+      <p class="section-desc">지난 1차 포럼의 현장 스케치와 강연 하이라이트를 짧은 영상으로 만나보세요.</p>
+      <div class="shorts-grid">
+        <!-- 영상 교체: data-id 값만 바꾸면 됩니다 (유튜브 주소의 shorts/ 뒤 11자리) -->
+        <figure class="short-card">
+          <div class="short-frame">
+            <iframe src="https://www.youtube.com/embed/FmeHzcbUH3A" title="1차 포럼 현장 스케치" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <figcaption><b>현장 스케치</b><span>1차 포럼 하이라이트</span></figcaption>
+        </figure>
+        <figure class="short-card">
+          <div class="short-frame">
+            <iframe src="https://www.youtube.com/embed/hwWCk8vRxcA" title="김상균 교수 강연 하이라이트" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <figcaption><b>김상균 교수</b><span>강연 하이라이트</span></figcaption>
+        </figure>
+        <figure class="short-card">
+          <div class="short-frame">
+            <iframe src="https://www.youtube.com/embed/ELvF63BknT4" title="김덕진 소장 강연 하이라이트" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <figcaption><b>김덕진 소장</b><span>강연 하이라이트</span></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
