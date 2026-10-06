@@ -155,9 +155,27 @@ nav a:hover{color:var(--violet)}
   html{scroll-behavior:auto}
 }
 .hero-cta{
-  display:flex;justify-content:center;
+  display:flex;justify-content:center;align-items:center;
+  gap:clamp(10px,1.4vw,16px);flex-wrap:wrap;
   margin-top:clamp(22px,3.5vw,36px);
 }
+.btn-hero-sub{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);
+  color:var(--violet);
+  border:1.5px solid var(--violet);
+  box-shadow:none;
+  padding:13px 28px;
+  font-size:clamp(14px,1.6vw,16px);
+}
+.btn-hero-sub:hover{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(123,92,255,.3)}
+.btn-hero-sub svg{width:14px;height:14px}
+.cta-note{
+  flex:1 0 100%;text-align:center;
+  margin-top:clamp(10px,1.4vw,14px);
+  font-size:clamp(13px,1.5vw,14px);color:var(--muted);
+}
+.cta-note b{color:var(--violet);font-weight:800}
 .btn-hero{font-size:clamp(16px,2vw,18px);padding:15px 44px}
 
 /* Key strip */
@@ -1001,6 +1019,11 @@ footer .f-tagline{
       </div>
       <div class="hero-cta">
         <a href="https://forms.gle/MXmDtusGhtWsipUP9" target="_blank" rel="noopener" class="btn btn-hero">지금 신청하기</a>
+        <a href="https://www.xn--2z1bw8k1pjz5ccumkb.kr/edc/crse/req/list.do?pno=1&amp;punit=5&amp;psize=10&amp;sch_edc_plan_nm=%ED%8F%AC%EB%9F%BC&amp;sch_area_cd=101" target="_blank" rel="noopener" class="btn btn-hero btn-hero-sub">
+          AI디지털배움터에서 신청
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="18" x2="18" y2="6"/><polyline points="9 6 18 6 18 15"/></svg>
+        </a>
+        <p class="cta-note">두 경로 중 편하신 곳에서 <b>한 번만</b> 신청하시면 됩니다.</p>
       </div>
     </div>
   </section>
@@ -1179,7 +1202,7 @@ footer .f-tagline{
     <div class="container">
       <span class="section-label">Join</span>
       <h2 class="section-title">참여 안내</h2>
-      <p class="section-desc">현장 참석과 온라인 시청, 두 가지 방법으로 함께할 수 있습니다.</p>
+      <p class="section-desc">현장 참석과 온라인 시청, 두 가지 방법으로 함께할 수 있습니다.<br>신청은 한 번만 하시면 되며, 중복으로 접수하실 필요가 없습니다.</p>
       <div class="join-grid">
         <div class="join-card">
           <span class="join-badge">ON-SITE</span>
@@ -1205,7 +1228,7 @@ footer .f-tagline{
         <div class="route-text">
           <span class="route-tag">또 다른 신청 경로</span>
           <p class="route-title">서울AI디지털배움터에서도 신청할 수 있습니다</p>
-          <p class="route-desc">배움터 회원이시라면 홈페이지 수강신청 메뉴에서 바로 접수하실 수 있습니다.</p>
+          <p class="route-desc">배움터 회원이시라면 홈페이지 수강신청 메뉴에서 바로 접수하실 수 있습니다.<br>위 신청서와 동일하게 접수되므로, 두 곳 모두 신청하지 않으셔도 됩니다.</p>
         </div>
         <a class="btn btn-route" href="https://www.xn--2z1bw8k1pjz5ccumkb.kr/edc/crse/req/list.do?pno=1&amp;punit=5&amp;psize=10&amp;sch_edc_plan_nm=%ED%8F%AC%EB%9F%BC&amp;sch_area_cd=101" target="_blank" rel="noopener">
           배움터에서 신청하기
