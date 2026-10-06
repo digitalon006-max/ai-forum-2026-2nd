@@ -250,8 +250,29 @@ function startScan(){
   if(!scanner) scanner=new Html5Qrcode('reader');
   note('카메라 권한을 확인하는 중입니다...');
   askPermission().then(listCameras).catch(function(err){
-    note('카메라를 사용할 수 없습니다: '+err);
-    alert('카메라 권한이 필요합니다.\n주소창의 자물쇠 아이콘에서 카메라를 허용으로 바꾼 뒤 다시 시도해 주세요.');
+    var name = (err && err.name) ? err.name : String(err);
+    var msg;
+    if (name === 'NotAllowedError' || name === 'PermissionDeniedError') {
+      msg = '카메라 권한이 거부되어 있습니다.\n\n' +
+            '[PC 크롬] 주소창 왼쪽 아이콘 → 사이트 설정 → 카메라 → 허용\n' +
+            '[갤럭시 크롬] 주소창 왼쪽 아이콘 → 권한 → 카메라 → 허용\n' +
+            '[아이패드] 주소창 AA → 웹 사이트 설정 → 카메라 → 허용\n\n' +
+            '바꾼 뒤 새로고침하고 다시 시도해 주세요.';
+    } else if (name === 'NotFoundError' || name === 'DevicesNotFoundError') {
+      msg = '이 기기에서 카메라를 찾지 못했습니다.\n\n' +
+            '카메라가 없는 PC이거나, 윈도우 설정에서 카메라가 꺼져 있을 수 있습니다.\n' +
+            '실제 운영할 태블릿이나 휴대폰에서 테스트해 주세요.';
+    } else if (name === 'NotReadableError' || name === 'TrackStartError') {
+      msg = '카메라를 다른 프로그램이 사용 중입니다.\n\n' +
+            '줌, 팀즈, 카메라 앱 등을 닫은 뒤 다시 시도해 주세요.';
+    } else if (name === 'SecurityError') {
+      msg = '보안 연결(https)이 아니어서 카메라를 쓸 수 없습니다.\n' +
+            '주소가 https:// 로 시작하는지 확인해 주세요.';
+    } else {
+      msg = '카메라를 시작하지 못했습니다.\n오류: ' + name + '\n' + ((err && err.message) ? err.message : '');
+    }
+    note('카메라 오류: ' + name);
+    alert(msg);
   });
 }
 function askPermission(){
